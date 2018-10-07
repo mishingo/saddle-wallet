@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Dashboard from '@/components/Dashboard'
+import Home from '@/components/Home'
+// import Dashboard from '@/components/Dashboard'
 import Signup from '@/components/Signup'
 import Send from '@/components/Send'
 import Currency from '@/components/Currency'
@@ -11,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'dashboard',
-      component: Dashboard
+      name: 'home',
+      component: Home
     },
     {
       path: '/signup',
