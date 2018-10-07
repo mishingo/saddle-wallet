@@ -11,6 +11,7 @@
   </section>
 </template>
 
+
 <script>
   import Users from '@/js/users'
 
@@ -24,6 +25,7 @@
       }
     },
     beforeCreate: function () {
+      console.log('hi im jef')
       Users.init()
     },
     methods: {
@@ -46,29 +48,29 @@
 
   #signup {
     text-align: center;
-    
+
     .form {
       display: flex;
       flex-direction: column;
       margin: auto;
-      
+
       .entry {
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
-        
+
         label {
           margin-right: 20px
         }
-        
+
         button {
           margin-left: 20px
-        }  
-        
+        }
+
       }
-        
+
     }
-    
+
   }
 
 </style>
