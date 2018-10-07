@@ -3,15 +3,16 @@
     <h1>Choose your currency</h1>
     <div class="form">
       <div class="entry">
-        <button @click="convert" name="signup">Confirm currency</button>
-        <p>
-          <select v-model="selected">
-          <option>one</option>
-          <option>two</option>
+        <button @click="choose" name="choose">Confirm currency</button>
+          <select v-model="form.selected">
+            <option value='USD'>USD - United States</option>
+            <option value='INR'>INR - Indian Rupee</option>
+            <option value='CNY'>CNY - Chinese Yuan</option>
+            <option value='EUR'>EUR - Euro</option>
+            <option value='RUB'>RUB - Russian Ruble</option>
+            <option value='COP'>COP - Colombian Peso</option>
+            <option value='MXN'>MXN - Mexican Peso</option>
           </select>
-          {{selected}}
-        </p>
-        <label for="pseudo"></label>
       </div>
     </div>
   </section>
@@ -31,25 +32,14 @@
       }
     },
     beforeCreate: function () {
-      console.log('hi im jef')
       Users.init()
     },
     methods: {
-      convert: function () {
-        console.log('hi I am converting...')
-        localStorage.setItem('input', parseFloat(this.form.amount))
-        fetch('https://free.currencyconverterapi.com/api/v6/convert?q=USD_COP&compact=ultra', {method: 'GET'})
-          .then(function (response) {
-            return response.json()
-          })
-          .then(function (myJson) {
-            // console.log(JSON.stringify(myJson))
-            var exchangeRate = myJson.USD_COP
-            console.log('Exchange rate is ' + exchangeRate)
-            var usdAmount = localStorage.getItem('input') / exchangeRate
-            console.log('You entered COP $' + localStorage.getItem('input'))
-            console.log('Amount to be sent in USD $' + usdAmount)
-          })
+      choose: function () {
+        console.log('I am choosing your currency...')
+        localStorage.setItem('currency', this.form.selected)
+        console.log(this.form.selected)
+        this.$router.push({ path: 'send' })
       }
     }
   }
