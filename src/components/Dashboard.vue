@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard">
+  <div class="bg-white rounded-lg shadow-lg py-8 px-4 mt-4">
     <h1>{{ msg }}</h1>
     <div v-if="userExists">
       Welcome {{ pseudo }}. Destroy your account by clicking <a href="#" @click="destroyAccount">here</a>.
@@ -51,23 +51,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-  display: block;
-}
+<style>
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
