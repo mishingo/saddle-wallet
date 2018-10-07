@@ -1,6 +1,6 @@
 <template>
   <section id='signup'>
-    <h1>Conversion</h1>
+    <h1>Send</h1>
     <div class="form">
       <div class="entry">
         <button @click="convert" name="signup">Confirm amount</button>

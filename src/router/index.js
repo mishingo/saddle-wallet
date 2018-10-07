@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Dashboard from '@/components/Dashboard'
 import Signup from '@/components/Signup'
-import Conversion from '@/components/Conversion'
+import Send from '@/components/Send'
 
 Vue.use(Router)
 
@@ -19,9 +19,9 @@ export default new Router({
       component: Signup
     },
     {
-      path: '/conversion',
-      name: 'conversion',
-      component: Conversion
+      path: '/send',
+      name: 'send',
+      component: Send
     }
   ]
 })
